@@ -1,0 +1,85 @@
+body {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1000&q=80');
+    background-size: cover;
+    background-position: center;
+    color: #00f2ff;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.panel {
+    border: 1px solid #00f2ff;
+    padding: 25px;
+    background: rgba(0, 20, 30, 0.85);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 30px rgba(0, 242, 255, 0.3);
+    width: 320px;
+    cursor: pointer;
+    transition: transform 0.1s, box-shadow 0.3s;
+    outline: none;
+    text-align: left;
+}
+
+.panel:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 50px #00f2ff;
+}
+
+.panel:hover {
+    background: rgba(0, 40, 50, 0.9);
+}
+
+.header {
+    font-weight: bold;
+    border-bottom: 1px solid #00f2ff;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.data-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.label {
+    font-size: 0.7em;
+    color: #55aeb3;
+    display: block;
+}
+
+.value {
+    font-size: 1.1em;
+    text-shadow: 0 0 5px #00f2ff;
+}
+
+.progress-bg {
+    height: 4px;
+    background: #002222;
+    margin-top: 10px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #00f2ff;
+    width: 0%;
+    transition: 0.5s;
+}
+
+.footer-msg {
+    font-size: 0.7em;
+    text-align: center;
+    margin-top: 15px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0.2; }
+}
