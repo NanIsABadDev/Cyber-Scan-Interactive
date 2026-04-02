@@ -1,0 +1,52 @@
+Documentação Técnica: Simulador de Scan de Rede
+1. Descrição do Projeto
+Este projeto consiste em uma interface web interativa que simula visualmente um "scan" de
+sistema em tempo real. A aplicação gera dados fictícios de rede para fins estéticos e de interface,
+exibindo métricas como endereços IP, portas de comunicação, latência (ping) e progresso de
+carregamento.
+2. Arquitetura do Sistema
+O projeto é construído sobre o tripé fundamental do desenvolvimento Web:
+HTML5: Estruturação dos elementos de exibição e containers de dados.
+CSS3: Estilização visual com temática "Cyberpunk/Hacker", utilizando gradientes e tipografia
+monoespaçada.
+JavaScript (ES6): Lógica de geração de dados randômicos e manipulação dinâmica do DOM.
+3. Estrutura de Dados e Interface (HTML)
+A interface utiliza identificadores únicos (id) para permitir que o JavaScript injete os dados em
+tempo real.
+Elemento | ID | Descrição
+IP Alvo | ip | Exibe um endereço IPv4 gerado aleatoriamente.
+Porta | port | Exibe uma porta de rede comum (ex: 80, 443, 22).
+Ping | ping | Mostra a latência simulada em milissegundos (MS).
+Status | speed | Exibe a fase atual da simulação (Ex: SCANNING, BYPASSING).
+Progresso | percent | Valor numérico da conclusão (0% a 100%).
+Barra | bar | Elemento visual que expande conforme a porcentagem.
+4. Lógica de Programação (JavaScript)
+O núcleo da aplicação reside em duas funções principais que gerenciam a automação dos dados:
+Função update()
+Esta função é responsável por:
+- Geração de IP: Utiliza a função auxiliar r(255) para montar uma string de IP válida.
+- Seleção de Porta: Escolhe aleatoriamente um valor dentro de um array de portas pré-definidas.
+- Cálculo de Progresso: Gera um inteiro entre 0 e 100 para atualizar tanto o texto quanto a largura
+da barra de progresso CSS.
+- Manipulação do DOM: Atualiza o innerText e o style.width de cada elemento correspondente.
+Função Auxiliar r(max)
+function r(max) {
+return Math.floor(Math.random() * max);
+}
+Uma função simplificada para reduzir a verbosidade do código, retornando um número inteiro
+aleatório.
+Automação
+setInterval(update, 3000): Garante que o scan seja atualizado automaticamente a cada 3
+segundos.
+window.onload: Inicia a primeira carga de dados assim que a página é aberta.
+5. Design e Estilização (CSS)
+O visual é focado na imersão do usuário:
+- Fundo: Utiliza uma imagem temática com um overlay escuro para garantir a legibilidade.
+- Tipografia: Courier New, simulando terminais de computadores antigos.
+- Paleta de Cores: Foco no ciano (#00f2ff) sobre fundo escuro para criar o efeito de "brilho" de
+monitor.
+6. Observações de Implementação
+- Atenção à Sintaxe: Na geração da variável const ip, é obrigatório o uso de Template Literals
+(crases `) para que a interpolação das variáveis ocorra corretamente.
+- Responsividade: O uso de display: flex e height: 100vh garante que o painel de scan permaneça
+centralizado em qualquer resolução de tela.
