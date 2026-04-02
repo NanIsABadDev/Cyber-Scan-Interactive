@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cyber Scan Interactive</title>
+
+    <!-- LINK DO CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <button class="panel" onclick="update()" title="Clique para Scanear">
+        <div class="header">
+            SYSTEM_SCAN <span id="percent">0%</span>
+        </div>
+        
+        <div class="data-group">
+            <div class="item">
+                <span class="label">TARGET_IP</span>
+                <span id="ip" class="value">0.0.0.0</span>
+            </div>
+            <div class="item">
+                <span class="label">PORT</span>
+                <span id="port" class="value">----</span>
+            </div>
+        </div>
+
+        <div class="data-group">
+            <div class="item">
+                <span class="label">PING</span>
+                <span id="ping" class="value">-- MS</span>
+            </div>
+            <div class="item">
+                <span class="label">STATUS</span>
+                <span id="speed" class="value">READY</span>
+            </div>
+        </div>
+
+        <div class="progress-bg">
+            <div id="bar" class="progress-fill"></div>
+        </div>
+
+        <div class="footer-msg">CLIQUE PARA REFRESH</div>
+    </button>
+
+    <!-- LINK DO JAVASCRIPT -->
+    <script src="script.js"></script>
+</body>
+</html>
